@@ -1,9 +1,9 @@
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from hashlib import sha256
-import re
 
 from aiogram import Router
 from aiogram.filters import Command, CommandStart
@@ -89,7 +89,11 @@ def _extract_title_and_body(markdown_text: str) -> tuple[str | None, str]:
 
     body_lines = lines[:first_non_empty_idx] + lines[first_non_empty_idx + 1 :]
     # Drop one extra blank line after removed H1 to avoid leading gap.
-    if first_non_empty_idx < len(lines) - 1 and body_lines and not body_lines[first_non_empty_idx].strip():
+    if (
+        first_non_empty_idx < len(lines) - 1
+        and body_lines
+        and not body_lines[first_non_empty_idx].strip()
+    ):
         del body_lines[first_non_empty_idx]
     return title[:256], "\n".join(body_lines)
 

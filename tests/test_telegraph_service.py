@@ -1,5 +1,6 @@
-import pytest
 from typing import Any, cast
+
+import pytest
 
 from app.services.telegraph_service import PublishResult, TelegraphError, TelegraphService
 
