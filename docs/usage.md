@@ -14,6 +14,8 @@
 - The bot publishes to Telegraph and returns an inline result with the link.
 - Identical queries use a short in-memory cache to reduce API load.
 
+**Telegram limit (important):** the text after `@your_bot` is the inline **query**. Telegram only sends the bot the first **256 characters** of that query (see [Bot API: InlineQuery](https://core.telegram.org/bots/api#inlinequery)). Anything longer is **never received** by the bot, so the Telegraph page will look “cut off”. For long Markdown, **send a normal message to the bot in private chat**, not inline.
+
 ## Personal Telegraph accounts (optional)
 
 - `/myaccount status` — show the current mode.
@@ -25,10 +27,11 @@
 
 ## Limits
 
-- Message length is capped (`MAX_MD_SIZE`).
+- **Private / group messages to the bot:** length is capped by `MAX_MD_SIZE` (default 30 000 characters in this project).
+- **Inline mode:** hard cap **256 characters** for the query text — this is a **Telegram** limit, not something the bot can raise.
 - Telegraph allows only a limited set of HTML tags.
-- Large content is split across multiple pages.
-- Inline mode uses the same size limits and rate limiting.
+- Large content is split across multiple pages (within `MAX_PAGES_PER_REQUEST`).
+- Rate limiting applies in both private and inline flows.
 
 ## Localization
 

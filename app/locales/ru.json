@@ -1,7 +1,7 @@
 {
   "label.yes": "да",
   "label.no": "нет",
-  "start.message": "Отправьте одним сообщением Markdown-текст.\nЯ опубликую его в Telegraph и верну ссылку.\n\nТакже доступен inline-режим: {bot_username} <markdown>.\n\nПерсональный аккаунт: /myaccount status|on|off|rotate",
+  "start.message": "Отправьте одним сообщением Markdown-текст.\nЯ опубликую его в Telegraph и верну ссылку.\n\nInline: {bot_username} <markdown>\n(В inline Telegram передаёт боту не больше 256 символов после имени бота — длинный текст пришлите сюда в личку.)\n\nПерсональный аккаунт: /myaccount status|on|off|rotate",
   "error.user_not_detected": "Не удалось определить пользователя.",
   "error.personal_disabled": "Персональные аккаунты выключены администратором. Используется общий аккаунт.",
   "myaccount.status.none": "Режим: shared.\nПерсональный аккаунт еще не создан.\nКоманда: /myaccount on",
@@ -19,7 +19,7 @@
   "publish.ok": "Готово ({mode}). Опубликовано страниц: {page_count}\n{links}",
   "inline.empty.title": "Введите Markdown текст",
   "inline.empty.desc": "Пример: {bot_username} # Заголовок",
-  "inline.empty.text": "Введите Markdown после имени бота в inline-режиме.",
+  "inline.empty.text": "Введите Markdown после имени бота (в inline не больше 256 символов — ограничение Telegram). Длинный текст отправьте боту в личные сообщения.",
   "inline.rate.title": "Слишком много запросов",
   "inline.rate.desc": "Повторите через минуту",
   "inline.rate.text": "Слишком много запросов. Повторите через минуту.",

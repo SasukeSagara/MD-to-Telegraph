@@ -1,7 +1,7 @@
 {
   "label.yes": "yes",
   "label.no": "no",
-  "start.message": "Send your Markdown text in a single message.\nI will publish it to Telegraph and return links.\n\nInline mode is also available: {bot_username} <markdown>.\n\nPersonal account: /myaccount status|on|off|rotate",
+  "start.message": "Send your Markdown text in a single message.\nI will publish it to Telegraph and return links.\n\nInline mode: {bot_username} <markdown>\n(Telegram allows only 256 characters after the bot name in inline — for longer text, message me here.)\n\nPersonal account: /myaccount status|on|off|rotate",
   "error.user_not_detected": "Unable to detect user.",
   "error.personal_disabled": "Personal accounts are disabled by admin. Shared account mode is active.",
   "myaccount.status.none": "Mode: shared.\nNo personal account yet.\nCommand: /myaccount on",
@@ -19,7 +19,7 @@
   "publish.ok": "Done ({mode}). Published pages: {page_count}\n{links}",
   "inline.empty.title": "Enter Markdown text",
   "inline.empty.desc": "Example: {bot_username} # Heading",
-  "inline.empty.text": "Enter Markdown text after the bot username in inline mode.",
+  "inline.empty.text": "Enter Markdown after the bot username (inline is limited to 256 characters by Telegram). Long texts: open a private chat with the bot and send the message there.",
   "inline.rate.title": "Too many requests",
   "inline.rate.desc": "Retry in a minute",
   "inline.rate.text": "Too many requests. Please retry in one minute.",

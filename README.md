@@ -18,7 +18,7 @@ Telegram bot built with [aiogram](https://docs.aiogram.dev/) that:
 Supported modes:
 
 - Direct messages to the bot;
-- Inline mode (`@your_bot <markdown>`);
+- Inline mode (`@your_bot <markdown>`) — Telegram caps the inline query at **256 characters**; use DMs for long posts;
 - Optional per-user Telegraph accounts.
 
 ## Table of contents
