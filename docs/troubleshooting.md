@@ -1,15 +1,15 @@
 # Troubleshooting
 
-## Ошибка токена
+## Token errors
 
-Проверьте `BOT_TOKEN` и `TELEGRAPH_ACCESS_TOKEN` в `.env`.
+Check `BOT_TOKEN` and `TELEGRAPH_ACCESS_TOKEN` in `.env`.
 
-## Публикация не проходит
+## Publish failures
 
-- Проверьте доступность `api.telegra.ph`.
-- Убедитесь, что контент не нарушает ограничения Telegraph.
+- Check reachability of `api.telegra.ph`.
+- Ensure content complies with Telegraph limits.
 
-## Ошибки в CI
+## CI failures
 
-- Обновите lockfile: `uv lock`.
-- Проверьте линтеры/типы/тесты локально через `uv run`.
+- Refresh the lockfile: `uv lock`.
+- Run linters, types, and tests locally with `uv run ...`.

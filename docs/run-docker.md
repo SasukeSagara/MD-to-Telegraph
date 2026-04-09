@@ -1,16 +1,16 @@
-# Run Docker
+# Run with Docker
 
-1. Подготовить `.env`
-2. Собрать и запустить:
+1. Prepare `.env`.
+2. Build and start:
    - `docker compose up -d --build`
-   - при изменениях Dockerfile лучше пересобрать без кэша: `docker compose build --no-cache`
-3. Логи:
+   - After Dockerfile changes, a clean rebuild helps: `docker compose build --no-cache`
+3. Logs:
    - `docker compose logs -f bot`
-4. Проверка статуса healthcheck:
+4. Healthcheck:
    - `docker compose ps`
-   - статус должен стать `healthy` после старта.
-5. Для хранения SQLite-базы используется volume:
+   - Status should become `healthy` after startup.
+5. SQLite persistence uses a volume:
    - `./data:/app/data`
-   - рекомендуется `ACCOUNTS_DB_PATH=data/accounts.db` в `.env`.
-6. Остановка:
+   - Set `ACCOUNTS_DB_PATH=data/accounts.db` in `.env`.
+6. Stop:
    - `docker compose down`

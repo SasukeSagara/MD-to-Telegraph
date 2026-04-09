@@ -21,14 +21,15 @@ flowchart TD
     accountActions --> telegraphApi[telegraPhApi]
 ```
 
-1. Входящее сообщение от пользователя.
-2. Rate-limit и валидация размера.
-3. Конвертация Markdown -> безопасный HTML.
-4. Публикация в Telegraph (1..N страниц).
-5. Ответ пользователю ссылкой(ами).
-6. Аудит метаданных запроса.
+1. Incoming message from the user.
+2. Rate limit and size validation.
+3. Markdown → safe HTML.
+4. Publish to Telegraph (1..N pages).
+5. Reply with link(s).
+6. Audit request metadata.
 
-Опционально:
-7. Пользователь включает personal-режим через `/myaccount on`.
-8. Бот создает Telegraph-account через `createAccount` и сохраняет токен в локальную БД.
-9. Дальнейшие публикации идут от персонального имени пользователя.
+Optional:
+
+7. User enables personal mode with `/myaccount on`.
+8. The bot calls `createAccount` and stores the token in the local database.
+9. Further publishes use the user’s personal author name.

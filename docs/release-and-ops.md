@@ -1,6 +1,6 @@
-# Release and Ops
+# Release and Operations
 
-## Чеклист релиза
+## Release checklist
 
 1. `uv lock --check`
 2. `uv run ruff check .`
@@ -8,12 +8,12 @@
 4. `uv run pytest`
 5. `docker build -t md-telegraph:release .`
 
-## Деплой
+## Deploy
 
 - `docker compose up -d --build`
 
-## Операционка
+## Operations
 
-- Мониторить логи `docker compose logs -f bot`
-- Следить за rate-limit и ошибками публикаций
-- Ротировать токены и перезапускать сервис при обновлениях
+- Watch logs: `docker compose logs -f bot`
+- Monitor rate limits and publish errors
+- Rotate tokens and restart the service after upgrades

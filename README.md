@@ -1,4 +1,4 @@
-# MD -> Telegraph Bot
+# MD → Telegraph Bot
 
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 [![uv](https://img.shields.io/badge/package%20manager-uv-6e56cf.svg)](https://docs.astral.sh/uv/)
@@ -8,62 +8,60 @@
 [![Docker](https://img.shields.io/badge/docker-ready-2496ED.svg)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-Telegram-бот на `aiogram`, который:
+Telegram bot built with [aiogram](https://docs.aiogram.dev/) that:
 
-- принимает сырой Markdown;
-- безопасно конвертирует его в совместимый с Telegraph формат;
-- публикует страницу (или несколько страниц при большом объеме);
-- возвращает пользователю готовые ссылки.
+- Accepts raw Markdown in a message;
+- Safely converts it to Telegraph-compatible HTML;
+- Publishes one or more pages when content is large;
+- Returns ready-to-use links.
 
-Поддерживаются:
+Supported modes:
 
-- обычный режим (сообщение боту);
-- inline-режим (`@your_bot <markdown>`);
-- опциональные персональные Telegraph-аккаунты на пользователя.
+- Direct messages to the bot;
+- Inline mode (`@your_bot <markdown>`);
+- Optional per-user Telegraph accounts.
 
-## Оглавление
+## Table of contents
 
-- [MD -\> Telegraph Bot](#md---telegraph-bot)
-  - [Оглавление](#оглавление)
-  - [Возможности](#возможности)
-  - [Быстрый старт](#быстрый-старт)
-  - [Команды бота](#команды-бота)
-  - [Конфигурация](#конфигурация)
-  - [Документация](#документация)
-  - [Разработка](#разработка)
+- [Features](#features)
+- [Quick start](#quick-start)
+- [Bot commands](#bot-commands)
+- [Configuration](#configuration)
+- [Documentation](#documentation)
+- [Development](#development)
+- [License](#license)
 
-## Возможности
+## Features
 
-- Конвертация Markdown -> Telegraph-compatible HTML с sanitization.
-- Публикация через общий `access_token`.
-- Fallback-шардинг длинного текста на несколько страниц.
-- Inline-публикация с кратким in-memory cache.
-- Аудит метаданных без хранения исходного Markdown.
-- Опциональный personal-режим (`/myaccount ...`) с публикацией от имени пользователя.
+- Markdown → Telegraph-safe HTML with sanitization.
+- Publishing via a shared `access_token`.
+- Automatic splitting of long content across multiple pages.
+- Inline publishing with a short in-memory cache.
+- Audit metadata without storing raw Markdown.
+- Optional personal mode (`/myaccount ...`) publishing under the user’s name.
 
-## Быстрый старт
+## Quick start
 
-1. Установите `uv`.
-2. Скопируйте пример окружения:
-   - `Copy-Item .env.example .env` (PowerShell)
-3. Заполните `.env` (минимум: `BOT_TOKEN`, `TELEGRAPH_ACCESS_TOKEN`).
-4. Установите зависимости:
-   - `uv sync --frozen --dev`
-5. Запустите бота:
-   - `uv run python -m app.main`
+1. Install `uv`.
+2. Copy the environment template:
+   - PowerShell: `Copy-Item .env.example .env`
+   - Unix: `cp .env.example .env`
+3. Fill in `.env` (minimum: `BOT_TOKEN`, `TELEGRAPH_ACCESS_TOKEN`).
+4. Install dependencies: `uv sync --frozen --dev`
+5. Run: `uv run python -m app.main`
 
-## Команды бота
+## Bot commands
 
-- `/start` — инструкция по работе.
-- отправка любого Markdown-сообщения — публикация в Telegraph.
-- `/myaccount status` — статус personal/shared режима.
-- `/myaccount on` — включить personal-режим (создать Telegraph-аккаунт).
-- `/myaccount off` — вернуться к shared-режиму.
-- `/myaccount rotate` — перевыпустить personal access token.
+- `/start` — how the bot works.
+- Send any Markdown message — publish to Telegraph.
+- `/myaccount status` — personal vs shared mode.
+- `/myaccount on` — enable personal mode (creates a Telegraph account).
+- `/myaccount off` — switch back to shared mode.
+- `/myaccount rotate` — rotate the personal access token.
 
-## Конфигурация
+## Configuration
 
-Ключевые переменные:
+Key variables:
 
 - `BOT_TOKEN`
 - `TELEGRAPH_ACCESS_TOKEN`
@@ -71,29 +69,35 @@ Telegram-бот на `aiogram`, который:
 - `ENABLE_PERSONAL_ACCOUNTS`
 - `ACCOUNTS_DB_PATH`
 
-Полный список и описание: [docs/configuration.md](docs/configuration.md).
+Full list: [docs/configuration.md](docs/configuration.md).
 
-## Документация
+## Documentation
 
-- Старт и установка: [docs/getting-started.md](docs/getting-started.md)
-- Токены и секреты: [docs/tokens-and-secrets.md](docs/tokens-and-secrets.md)
-- Конфигурация: [docs/configuration.md](docs/configuration.md)
-- Локальный запуск: [docs/run-local.md](docs/run-local.md)
-- Запуск в Docker: [docs/run-docker.md](docs/run-docker.md)
-- Использование: [docs/usage.md](docs/usage.md)
-- Пользовательский флоу: [docs/user-flow.md](docs/user-flow.md)
-- Архитектура: [docs/architecture.md](docs/architecture.md)
+- Setup: [docs/getting-started.md](docs/getting-started.md)
+- Tokens and secrets: [docs/tokens-and-secrets.md](docs/tokens-and-secrets.md)
+- Configuration: [docs/configuration.md](docs/configuration.md)
+- Run locally: [docs/run-local.md](docs/run-local.md)
+- Docker: [docs/run-docker.md](docs/run-docker.md)
+- Usage: [docs/usage.md](docs/usage.md)
+- User flow: [docs/user-flow.md](docs/user-flow.md)
+- Architecture: [docs/architecture.md](docs/architecture.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
-- Релиз и эксплуатация: [docs/release-and-ops.md](docs/release-and-ops.md)
+- Release and operations: [docs/release-and-ops.md](docs/release-and-ops.md)
 
-## Разработка
+## Development
 
-Проверки качества:
+Quality checks:
 
 - `uv run ruff check .`
 - `uv run mypy app`
 - `uv run pytest`
 
-Сборка контейнера:
+Docker image:
 
 - `docker build -t md-telegraph:local .`
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute.
+
+## License
+
+This project is licensed under the MIT License — see [LICENSE](LICENSE).

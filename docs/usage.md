@@ -1,37 +1,37 @@
 # Usage
 
-## Пользовательский сценарий
+## Basic flow
 
-1. Пользователь пишет `/start`.
-2. Бот сообщает формат работы.
-3. Пользователь отправляет полный Markdown одним сообщением.
-4. Бот публикует в Telegraph.
-5. Бот возвращает одну или несколько ссылок.
+1. User sends `/start`.
+2. The bot explains how it works.
+3. User sends full Markdown in a single message.
+4. The bot publishes to Telegraph.
+5. The bot returns one or more links.
 
-## Inline-режим
+## Inline mode
 
-- В любом чате: `@your_bot <markdown>`
-- Бот публикует контент в Telegraph и возвращает inline-результат со ссылкой.
-- Для одинаковых запросов используется короткий in-memory cache, чтобы снизить нагрузку на API.
+- In any chat: `@your_bot <markdown>`
+- The bot publishes to Telegraph and returns an inline result with the link.
+- Identical queries use a short in-memory cache to reduce API load.
 
-## Персональные аккаунты Telegraph (опционально)
+## Personal Telegraph accounts (optional)
 
-- Команда: `/myaccount status` — показать текущий режим.
-- Команда: `/myaccount on` — создать/включить персональный аккаунт пользователя.
-- Команда: `/myaccount off` — вернуться на общий аккаунт.
-- Команда: `/myaccount rotate` — перевыпустить персональный access token.
-- Имя автора: `@username`, иначе `first_name last_name`.
-- Ссылка автора: `https://t.me/<username>`, иначе `tg://user?id=<id>`.
+- `/myaccount status` — show the current mode.
+- `/myaccount on` — create or enable a personal account for the user.
+- `/myaccount off` — switch back to the shared account.
+- `/myaccount rotate` — rotate the personal access token.
+- Author name: `@username`, otherwise `first_name last_name`.
+- Author link: `https://t.me/<username>`, otherwise `tg://user?id=<id>`.
 
-## Ограничения
+## Limits
 
-- Есть лимит длины (`MAX_MD_SIZE`).
-- Telegraph поддерживает ограниченный набор тегов.
-- При большом контенте бот делает шардинг по страницам.
-- Для inline действуют те же лимиты размера и rate-limit.
+- Message length is capped (`MAX_MD_SIZE`).
+- Telegraph allows only a limited set of HTML tags.
+- Large content is split across multiple pages.
+- Inline mode uses the same size limits and rate limiting.
 
-## Локализация
+## Localization
 
-- Тексты бота берутся из файлов локалей (`app/locales/*.json`).
-- Локаль выбирается по `user.language_code` из Telegram.
-- Если локаль пользователя не поддерживается, используется fallback из `DEFAULT_LOCALE`.
+- Bot copy comes from locale files (`app/locales/*.json`). The repository includes `en` and `ru`.
+- Locale is chosen from the user’s `language_code` in Telegram (e.g. `ru`, `ru-RU` → Russian).
+- If no matching file exists, the bot falls back to `DEFAULT_LOCALE`.

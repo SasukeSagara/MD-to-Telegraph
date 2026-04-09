@@ -1,4 +1,6 @@
 {
+  "label.yes": "да",
+  "label.no": "нет",
   "start.message": "Отправьте одним сообщением Markdown-текст.\nЯ опубликую его в Telegraph и верну ссылку.\n\nТакже доступен inline-режим: {bot_username} <markdown>.\n\nПерсональный аккаунт: /myaccount status|on|off|rotate",
   "error.user_not_detected": "Не удалось определить пользователя.",
   "error.personal_disabled": "Персональные аккаунты выключены администратором. Используется общий аккаунт.",

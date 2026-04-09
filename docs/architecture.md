@@ -18,13 +18,13 @@ flowchart TD
     telegraphService --> tgApi
 ```
 
-- `app/main.py` — запуск бота и wiring зависимостей.
-- `app/config.py` — единая конфигурация через `pydantic-settings`.
+- `app/main.py` — bot startup and dependency wiring.
+- `app/config.py` — configuration via `pydantic-settings`.
 - `app/bot/handlers.py` — Telegram handlers.
-- `app/services/md_converter.py` — Markdown -> Telegraph HTML.
-- `app/services/telegraph_service.py` — публикация и шардинг.
-- `app/services/audit_service.py` — аудит метаданных.
-- `app/services/rate_limit_service.py` — анти-абуз лимитер.
-- `app/services/account_manager.py` — персональные аккаунты и выбор publish-контекста.
-- `app/services/account_store.py` — SQLite-хранилище профилей personal/shared.
-- `app/services/inline_cache_service.py` — in-memory cache для inline-запросов.
+- `app/services/md_converter.py` — Markdown → Telegraph HTML.
+- `app/services/telegraph_service.py` — publishing and page splitting.
+- `app/services/audit_service.py` — audit metadata.
+- `app/services/rate_limit_service.py` — abuse-prevention rate limiter.
+- `app/services/account_manager.py` — personal accounts and publish context.
+- `app/services/account_store.py` — SQLite store for personal/shared profiles.
+- `app/services/inline_cache_service.py` — in-memory cache for inline queries.

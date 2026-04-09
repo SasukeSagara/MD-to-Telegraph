@@ -1,16 +1,16 @@
 # Configuration
 
-Все настройки считываются классом `Settings` из `app/config.py` через `.env`.
+All settings are loaded by the `Settings` class in `app/config.py` from `.env`.
 
-- `BOT_TOKEN` (обязательный)
-- `TELEGRAPH_ACCESS_TOKEN` (обязательный)
-- `DEFAULT_AUTHOR_NAME` (по умолчанию `MD Telegraph Bot`)
-- `DEFAULT_AUTHOR_URL` (опционально)
-- `MAX_MD_SIZE` (по умолчанию `30000`)
-- `MAX_PAGES_PER_REQUEST` (по умолчанию `5`)
-- `USER_RATE_LIMIT_PER_MINUTE` (по умолчанию `6`)
-- `ENABLE_PERSONAL_ACCOUNTS` (`false` по умолчанию, включает персональные аккаунты Telegraph)
-- `ACCOUNTS_DB_PATH` (путь к SQLite БД, по умолчанию `data/accounts.db`)
-- `DEFAULT_LOCALE` (fallback-локаль бота, по умолчанию `en`)
-- `LOCALES_DIR` (путь к JSON-файлам локалей, по умолчанию `app/locales`)
-- `LOG_LEVEL` (`INFO` по умолчанию)
+- `BOT_TOKEN` (required)
+- `TELEGRAPH_ACCESS_TOKEN` (required)
+- `DEFAULT_AUTHOR_NAME` (default: `MD Telegraph Bot`)
+- `DEFAULT_AUTHOR_URL` (optional)
+- `MAX_MD_SIZE` (default: `30000`)
+- `MAX_PAGES_PER_REQUEST` (default: `5`)
+- `USER_RATE_LIMIT_PER_MINUTE` (default: `6`)
+- `ENABLE_PERSONAL_ACCOUNTS` (default: `false` — enables per-user Telegraph accounts)
+- `ACCOUNTS_DB_PATH` (SQLite database path, default: `data/accounts.db`)
+- `DEFAULT_LOCALE` (fallback locale, default: `en`)
+- `LOCALES_DIR` (directory with locale JSON files, default: `app/locales`)
+- `LOG_LEVEL` (default: `INFO`)

@@ -1,4 +1,6 @@
 {
+  "label.yes": "yes",
+  "label.no": "no",
   "start.message": "Send your Markdown text in a single message.\nI will publish it to Telegraph and return links.\n\nInline mode is also available: {bot_username} <markdown>.\n\nPersonal account: /myaccount status|on|off|rotate",
   "error.user_not_detected": "Unable to detect user.",
   "error.personal_disabled": "Personal accounts are disabled by admin. Shared account mode is active.",

@@ -138,9 +138,9 @@ def create_router(deps: HandlerDependencies) -> Router:
             if not account:
                 await message.answer(tr(locale, "myaccount.status.none"))
                 return
-            has_token = "yes" if locale == "en" else "да"
+            has_token = tr(locale, "label.yes")
             if not account.access_token:
-                has_token = "no" if locale == "en" else "нет"
+                has_token = tr(locale, "label.no")
             await message.answer(
                 tr(
                     locale,
